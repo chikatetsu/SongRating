@@ -7,7 +7,14 @@ The server is a centralized way to store the leaderboard since you can run a Son
 
 ## Repositories
 - [Server](https://github.com/chikatetsu/song-rating-server) : Self hosted API developped in Python
+- [CLI](https://github.com/chikatetsu/song-rating-cli) : PC client developped in Python for the Cider application. Is listening to your keyboard inputs to rate the current playing songs
+- [Android App](https://github.com/chikatetsu/song-rating-android) : Android Application with the leaderboard and push notifications to vote for a song
 
 ## Streaming services supported
-For now, only Apple Music on Android and Cider2 on PC is supported.
-But if you are willing to use only the Android client, support for other streaming services is easy to implement. Those supports will be made permanent in the future.
+### PC
+- Cider2
+### Android
+- Apple Music
+- more in the future...
+
+If you are willing to use only the Android client, support for other streaming services is easy to implement. Those supports will be made permanent in the future.
