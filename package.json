@@ -1,0 +1,19 @@
+{
+  "name": "song-rating",
+  "version": "1.0.0",
+  "description": "Song Rating is a personal open source project to help the user rank its music library by comparing songs while they are played on its music streaming application.  It works by asking if the current playing song is better or not than the song played earlier, and then sending this vote to the self-hosted server of the user hosting the Song Rating API. Then, the Song Rating API order those songs in the leaderboard using an oriented graph and an Elo rating system. The server is a centralized way to store the leaderboard since you can run a Song Rating client on different devices.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@semantic-release/commit-analyzer": "^13.0.1",
+    "@semantic-release/github": "^11.0.6",
+    "@semantic-release/release-notes-generator": "^14.1.0",
+    "semantic-release": "^24.2.9"
+  }
+}

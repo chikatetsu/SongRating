@@ -1,0 +1,31 @@
+name: Meta Release
+
+on:
+  repository_dispatch:
+    types: [subrepo-release]
+
+jobs:
+  build-meta-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup
+        run: sudo apt-get install -y unzip
+
+      - name: Download sub-repos
+        run: |
+          mkdir meta-release
+          for repo in song-rating-server song-rating-cli song-rating-android; do
+            TAG=$(jq -r '.client_payload.tag' $GITHUB_EVENT_PATH)
+            curl -L -o ${repo}.zip https://github.com/chikatetsu/$repo/archive/refs/tags/$TAG.zip
+            unzip -q ${repo}.zip -d meta-release/$repo
+          done
+
+      - name: Create release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v$(date +'%Y.%m.%d.%H%M%S')
+          name: Global Release ${{ github.event.client_payload.repo }}
+          files: meta-release/*
